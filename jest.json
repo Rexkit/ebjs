@@ -1,0 +1,10 @@
+{
+  "transform": {
+    "\\.(js|jsx|ts|tsx)$": "ts-jest"
+  },
+  "bail": true,
+  "resetModules": true,
+  "testRegex": "(-spec)\\.(ts|tsx)$",
+  "resetMocks": true,
+  "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"]
+}
