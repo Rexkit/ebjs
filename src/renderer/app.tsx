@@ -22,10 +22,12 @@ export class App {
     const React = await import("react");
     const { render } = await import("react-dom");
 
+    const { Header } = await import("./components/Header");
+
     const className = `${process.platform} container`;
     const app = (
       <div className={className}>
-        <p>Hello World</p>
+        <Header appState={this.state} />
       </div>
     );
 

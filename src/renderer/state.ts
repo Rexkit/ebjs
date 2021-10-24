@@ -11,15 +11,21 @@ export class AppState {
   @observable public currentProjectDir: string | null = null;
   @observable public isRunning = false;
   @observable public localPath: string | undefined;
+  @observable public isConsoleShowing = false;
 
   constructor() {
     this.pushError = this.pushError.bind(this);
     this.pushOutput = this.pushOutput.bind(this);
     this.clearConsole = this.clearConsole.bind(this);
+    this.toggleConsole = this.toggleConsole.bind(this);
 
     autorun(() => this.save("packageManager", this.packageManager ?? "npm"));
 
     this.pushOutput("Console ready 🔬");
+  }
+
+  @action public toggleConsole() {
+    this.isConsoleShowing = !this.isConsoleShowing;
   }
 
   /**
